@@ -339,7 +339,34 @@
         margin-bottom: 1rem;
     }
 }
+/* Contact Page Styles (existing content...)
 
+/* === (existing file content above remains) === */
+
+/* Small fixes to ensure inputs are always boxed and container adapts well on small screens */
+.contact-form-container,
+.contact-form {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Ensure form controls always use border-box and 100% width to avoid overflow on small screens */
+.contact-form-container .form-group input,
+.contact-form-container .form-group select,
+.contact-form-container .form-group textarea {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Slight spacing tweak for very small screens */
+@media (max-width: 420px) {
+    .contact-form h3 {
+        font-size: 1.4rem;
+    }
+    .contact-form-container {
+        padding: 1.2rem;
+    }
+}
 @media (max-width: 480px) {
     .contact-hero {
         padding: 100px 0 60px;
