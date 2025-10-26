@@ -1,5 +1,5 @@
 /* ================================
-   Li-Ning Club | Dark Purple Theme
+   Li-Ning Club | Dark Pro Theme
    ================================ */
 
 /* --- Reset --- */
@@ -13,7 +13,7 @@
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #f5f5f5;
-  background: linear-gradient(135deg, #0b0014, #1b0028);
+  background: linear-gradient(135deg, #0d0d0d, #181818);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -35,7 +35,7 @@ a {
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(20, 0, 35, 0.85);
+  background: rgba(15, 15, 15, 0.8);
   backdrop-filter: blur(12px);
   z-index: 999;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -67,7 +67,7 @@ a {
 .nav-link {
   font-weight: 500;
   position: relative;
-  color: #e8dcff;
+  color: #f1f1f1;
   transition: 0.3s ease;
 }
 
@@ -78,7 +78,7 @@ a {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background: #b84cff;
+  background: #ff2e63;
   transition: width 0.3s ease;
 }
 
@@ -99,7 +99,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 6rem 8%;
-  background: radial-gradient(circle at 20% 30%, #26004a 0%, #10001f 80%);
+  background: radial-gradient(circle at 20% 30%, #1e1e1e 0%, #0d0d0d 80%);
   position: relative;
   overflow: hidden;
 }
@@ -111,7 +111,7 @@ a {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(184,76,255,0.25), transparent 60%);
+  background: radial-gradient(circle, rgba(255,46,99,0.2), transparent 60%);
   animation: pulseGlow 6s infinite alternate;
 }
 
@@ -128,14 +128,14 @@ a {
 .hero-title {
   font-size: 4rem;
   font-weight: 900;
-  color: #b84cff;
+  color: #ff2e63;
   letter-spacing: 2px;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   margin: 1rem 0 2rem;
-  color: #c5a9ff;
+  color: #ccc;
 }
 
 .hero-buttons a {
@@ -146,29 +146,29 @@ a {
 }
 
 .btn-primary {
-  background: #b84cff;
+  background: #ff2e63;
   color: #fff;
   font-weight: 600;
 }
 
 .btn-primary:hover {
-  background: #c472ff;
+  background: #ff4f7d;
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  border: 1px solid #b84cff;
-  color: #b84cff;
+  border: 1px solid #ff2e63;
+  color: #ff2e63;
 }
 
 .btn-secondary:hover {
-  background: #b84cff;
+  background: #ff2e63;
   color: #fff;
 }
 
 .hero-image img {
   width: 450px;
-  filter: drop-shadow(0 0 25px rgba(184,76,255,0.3));
+  filter: drop-shadow(0 0 25px rgba(255,46,99,0.3));
   transition: transform 0.8s ease;
 }
 
@@ -185,7 +185,7 @@ a {
 .section-title {
   font-size: 2.2rem;
   margin-bottom: 2.5rem;
-  color: #e9dbff;
+  color: #fff;
 }
 
 .products-grid {
@@ -205,7 +205,7 @@ a {
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(184,76,255,0.2);
+  box-shadow: 0 10px 30px rgba(255,46,99,0.15);
 }
 
 .product-image {
@@ -220,12 +220,12 @@ a {
 }
 
 .product-price {
-  color: #b84cff;
+  color: #ff2e63;
   margin-bottom: 1rem;
 }
 
 .btn-product {
-  background: #b84cff;
+  background: #ff2e63;
   color: white;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -236,14 +236,14 @@ a {
 }
 
 .btn-product:hover {
-  background: #c472ff;
+  background: #ff4f7d;
   transform: translateY(-2px);
 }
 
 /* --- Categories --- */
 .categories {
   padding: 5rem 0;
-  background: #130024;
+  background: #111;
 }
 
 .category-grid {
@@ -257,20 +257,20 @@ a {
   padding: 2rem;
   border-radius: 15px;
   color: #fff;
-  background: linear-gradient(145deg, #1e0035, #0e001a);
+  background: linear-gradient(145deg, #181818, #0f0f0f);
   border: 1px solid rgba(255,255,255,0.05);
   transition: all 0.4s ease;
 }
 
 .category-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(184,76,255,0.2);
+  box-shadow: 0 8px 25px rgba(255,46,99,0.15);
 }
 
 .btn-category {
   display: inline-block;
   margin-top: 1rem;
-  background: #b84cff;
+  background: #ff2e63;
   padding: 0.6rem 1.4rem;
   border-radius: 25px;
   color: #fff;
@@ -279,14 +279,14 @@ a {
 }
 
 .btn-category:hover {
-  background: #c472ff;
+  background: #ff4f7d;
 }
 
 /* --- Newsletter --- */
 .newsletter {
   padding: 5rem 0;
   text-align: center;
-  background: radial-gradient(circle at center, #1e0038 0%, #0b0014 100%);
+  background: radial-gradient(circle at center, #181818 0%, #0d0d0d 100%);
 }
 
 .newsletter-content h2 {
@@ -296,7 +296,7 @@ a {
 }
 
 .newsletter-content p {
-  color: #b9a4ff;
+  color: #aaa;
   margin-bottom: 1.8rem;
 }
 
@@ -307,12 +307,12 @@ a {
   border-radius: 25px;
   outline: none;
   margin-right: 0.6rem;
-  background: #21003e;
+  background: #222;
   color: #fff;
 }
 
 .btn-newsletter {
-  background: #b84cff;
+  background: #ff2e63;
   color: #fff;
   border: none;
   padding: 0.8rem 1.6rem;
@@ -323,12 +323,12 @@ a {
 }
 
 .btn-newsletter:hover {
-  background: #c472ff;
+  background: #ff4f7d;
 }
 
 /* --- Footer --- */
 .footer {
-  background: #0a0012;
+  background: #0a0a0a;
   padding: 4rem 1rem 2rem;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
@@ -345,13 +345,21 @@ a {
   font-weight: 700;
 }
 
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.6rem;
+}
+
 .footer-section a {
-  color: #b9a4ff;
+  color: #aaa;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #b84cff;
+  color: #ff2e63;
 }
 
 .social-links {
@@ -366,7 +374,7 @@ a {
 }
 
 .social-link:hover {
-  color: #b84cff;
+  color: #ff2e63;
   transform: translateY(-3px);
 }
 
