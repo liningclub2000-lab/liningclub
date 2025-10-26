@@ -1,5 +1,6 @@
 /* ================================
    Li-Ning Club | Dark Pro Theme
+   Updated: profile dropdown + hamburger responsive
    ================================ */
 
 /* --- Reset --- */
@@ -35,10 +36,10 @@ a {
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(15, 15, 15, 0.8);
+  background: rgba(15, 15, 15, 0.88);
   backdrop-filter: blur(12px);
   z-index: 999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .nav-container {
@@ -58,12 +59,15 @@ a {
   transform: scale(1.05);
 }
 
+/* Primary nav list */
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  align-items: center;
 }
 
+/* Nav links */
 .nav-link {
   font-weight: 500;
   position: relative;
@@ -91,6 +95,205 @@ a {
   align-items: center;
   gap: 0.7rem;
   font-size: 1.2rem;
+  position: relative;
+}
+
+/* --- Profile (icon + dropdown) --- */
+/* The CSS supports both hover/focus and a "checkbox toggle" click method.
+   If you prefer click-to-toggle, place an input[type=checkbox].profile-toggle
+   before the .profile-button in the DOM (see usage notes). */
+
+.profile {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hidden checkbox toggle for click-based open (optional) */
+.profile-toggle {
+  display: none;
+}
+
+/* Visible profile button */
+.profile-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.18s ease, transform 0.12s ease;
+  user-select: none;
+}
+
+/* Show icon (emoji) before label - safe fallback if no image */
+.profile-button::before {
+  content: "👤";
+  font-size: 1.05rem;
+}
+
+/* Hover/focus effects */
+.profile-button:hover,
+.profile-button:focus {
+  background: rgba(255,46,99,0.06);
+  transform: translateY(-2px);
+}
+
+/* Dropdown menu */
+.profile-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 180px;
+  background: linear-gradient(180deg, rgba(16,16,16,0.98), #0b0b0b);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 0.45rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  display: none;
+  z-index: 40;
+  animation: menuPop .16s ease;
+}
+
+@keyframes menuPop {
+  from { opacity: 0; transform: translateY(-6px) scale(.99); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Menu items */
+.profile-menu a,
+.profile-menu button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  color: #e9e9e9;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.14s ease, color 0.14s ease;
+}
+
+.profile-menu a:hover,
+.profile-menu button:hover {
+  background: rgba(255,46,99,0.06);
+  color: #fff;
+}
+
+/* Show menu on hover / focus-within */
+.profile:hover .profile-menu,
+.profile:focus-within .profile-menu {
+  display: block;
+}
+
+/* Show menu when toggle checkbox is checked (click-to-open support)
+   HTML order: <input class="profile-toggle" id="p-tgl" type="checkbox"> <label class="profile-button" for="p-tgl">...</label> <div class="profile-menu">...</div>
+*/
+.profile-toggle:checked + .profile-button + .profile-menu {
+  display: block;
+}
+
+/* Small caret/triangle */
+.profile-menu::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 12px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent rgba(11,11,11,0.98) transparent;
+  filter: drop-shadow(0 -1px 1px rgba(0,0,0,0.3));
+}
+
+/* --- Hamburger (mobile) --- */
+/* Hidden by default on desktop */
+.hamburger {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* hidden checkbox to toggle mobile nav */
+.hamburger-toggle {
+  display: none;
+}
+
+/* visual hamburger button */
+.hamburger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.hamburger-button:hover {
+  background: rgba(255,46,99,0.05);
+  transform: translateY(-2px);
+}
+
+/* hamburger bars */
+.hamburger-button .bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.18s ease, opacity 0.12s ease;
+}
+
+/* mobile nav panel (hidden by default) */
+.mobile-nav {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 12px;
+  width: 260px;
+  background: linear-gradient(180deg, #0d0d0d, #0b0b0b);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 0.6rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: translateY(-10px) scale(.995);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 60;
+}
+
+/* Check toggle to open mobile nav
+   Usage: <input class="hamburger-toggle" id="h-tgl" type="checkbox"> <label class="hamburger-button" for="h-tgl">...</label> <nav class="mobile-nav">...</nav>
+*/
+.hamburger-toggle:checked + .hamburger-button + .mobile-nav {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* mobile nav links */
+.mobile-nav a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  color: #e6e6e6;
+  border-radius: 8px;
+  transition: background 0.14s ease;
+}
+
+.mobile-nav a:hover {
+  background: rgba(255,46,99,0.05);
+  color: #fff;
 }
 
 /* --- Hero Section --- */
@@ -384,3 +587,58 @@ a {
   color: #777;
   font-size: 0.9rem;
 }
+
+/* --- Responsive tweaks --- */
+@media (max-width: 1100px) {
+  .hero {
+    padding: 4.5rem 6%;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    width: 320px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 880px) {
+  /* Hide primary nav, show hamburger */
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+  }
+
+  /* Align nav container items for mobile */
+  .nav-container {
+    gap: 0.5rem;
+  }
+
+  /* Make hero and other sections more compact */
+  .hero {
+    padding: 3.5rem 4%;
+  }
+
+  .hero-image img {
+    width: 240px;
+  }
+
+  .section-title { font-size: 1.6rem; }
+}
+
+/* Accessibility focus states */
+a:focus,
+button:focus,
+label:focus {
+  outline: 3px solid rgba(255,46,99,0.18);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* End of file */
