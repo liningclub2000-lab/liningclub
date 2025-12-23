@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Тодорхой, Ил тод — Үнийн санал авах</title>
   <meta name="description" content="Таны асуудлыг хурдан шийдэх бүтээгдэхүүн/үйлчилгээ — ил тод үнэ, 14 хоногийн буцаалт.">
+  <link rel="canonical" href="https://yourdomain.example/">
+  <meta name="theme-color" content="#0066FF">
   <meta property="og:title" content="Тодорхой, Ил тод — Үнийн санал авах">
   <meta property="og:description" content="Таны асуудлыг хурдан шийдэх бүтээгдэхүүн/үйлчилгээ.">
   <meta property="og:image" content="/assets/og-image.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Brand","url":"https://yourdomain.example","logo":"https://yourdomain.example/assets/logo.png"}
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
       <a class="logo" href="/">Brand</a>
       <nav class="nav" role="navigation" aria-label="Main">
@@ -31,7 +36,7 @@
           <p class="lead">Бид танд зориулсан шийдлийг 48 цагт санал болгодог. Тодорхой үнэ, ямар ч нууц төлбөр байхгүй.</p>
           <div class="hero-ctas">
             <button class="cta primary" id="hero-cta">Үнийн санал авах</button>
-            <a class="cta secondary" href="#features">Дэлгэрэнгүй</a>
+            <a class="cta secondary" href="#features" rel="noopener">Дэлгэрэнгүй</a>
           </div>
           <div class="trust" aria-hidden="false">
             <span>★★★★★ 4.9/5 — 3,120 хэрэглэгч</span>
@@ -40,7 +45,6 @@
           </div>
         </div>
         <div class="hero-media" aria-hidden="true">
-          <!-- Хэрвээ та hero зургийг өөрөө оруулсан бол энд /assets/hero-800.jpg байрлуулна -->
           <img src="/assets/hero-800.jpg"
                srcset="/assets/hero-400.jpg 400w, /assets/hero-800.jpg 800w, /assets/hero-1200.jpg 1200w"
                sizes="(max-width:600px) 100vw, 50vw"
@@ -94,17 +98,21 @@
 
     <section id="contact" class="container contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Үнийн санал авах</h2>
-      <form id="lead-form" action="https://formspree.io/f/your-id" method="POST" novalidate>
+      <form id="lead-form" action="https://formspree.io/f/your-id" method="POST" novalidate aria-describedby="form-desc">
+        <p id="form-desc" class="visually-hidden">Бид таны нэр, имэйл болон хүсэлт авах болно. Таны мэдээллийг бид бусадтай хуваалцахгүй.</p>
         <label for="name">Нэр</label>
-        <input id="name" name="name" required>
+        <input id="name" name="name" required aria-required="true">
         <label for="email">Имэйл</label>
-        <input id="email" name="email" type="email" required>
+        <input id="email" name="email" type="email" required aria-required="true">
         <label for="message">Товч тайлбар (заавал биш)</label>
         <textarea id="message" name="message" rows="4"></textarea>
-        <button class="cta primary" type="submit">Илгээх</button>
+        <button class="cta primary" type="submit" id="submit-btn">Илгээх</button>
         <p class="privacy">Таны мэдээллийг бид бусдад хуваалцахгүй.</p>
       </form>
-      <div id="form-success" class="hidden" role="status">Баярлалаа! Бид таны захиалгыг хүлээн авлаа — 24 цаг дотор холбогдоно.</div>
+      <div id="form-success" class="hidden" role="status" aria-live="polite">Баярлалаа! Бид таны захиалгыг хүлээн авлаа — 24 цаг дотор холбогдоно.</div>
+      <noscript>
+        <p>Таны браузерт JavaScript идэвхгүй байна. Формаа илгээхийн тулд имэйлээр холбогдоно уу: contact@yourdomain.example</p>
+      </noscript>
     </section>
   </main>
 
