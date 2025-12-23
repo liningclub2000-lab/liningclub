@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тодорхой, Ил тод — Үнийн санал авах</title>
+  <meta name="description" content="Таны асуудлыг хурдан шийдэх бүтээгдэхүүн/үйлчилгээ — ил тод үнэ, 14 хоногийн буцаалт.">
+  <meta property="og:title" content="Тодорхой, Ил тод — Үнийн санал авах">
+  <meta property="og:description" content="Таны асуудлыг хурдан шийдэх бүтээгдэхүүн/үйлчилгээ.">
+  <meta property="og:image" content="/assets/og-image.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/">Brand</a>
+      <nav class="nav" role="navigation" aria-label="Main">
+        <a href="#features">Онцлог</a>
+        <a href="#pricing">Үнийн сан</a>
+        <a href="#contact">Холбоо</a>
+      </nav>
+      <button class="cta primary" id="top-cta">Үнийн санал авах</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Үр дүнг хурдан ав — Сэтгэл ханамж баталгаатай</h1>
+          <p class="lead">Бид танд зориулсан шийдлийг 48 цагт санал болгодог. Тодорхой үнэ, ямар ч нууц төлбөр байхгүй.</p>
+          <div class="hero-ctas">
+            <button class="cta primary" id="hero-cta">Үнийн санал авах</button>
+            <a class="cta secondary" href="#features">Дэлгэрэнгүй</a>
+          </div>
+          <div class="trust" aria-hidden="false">
+            <span>★★★★★ 4.9/5 — 3,120 хэрэглэгч</span>
+            <span>•</span>
+            <span>14 хоногийн буцаалт</span>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <!-- Хэрвээ та hero зургийг өөрөө оруулсан бол энд /assets/hero-800.jpg байрлуулна -->
+          <img src="/assets/hero-800.jpg"
+               srcset="/assets/hero-400.jpg 400w, /assets/hero-800.jpg 800w, /assets/hero-1200.jpg 1200w"
+               sizes="(max-width:600px) 100vw, 50vw"
+               alt="Үйлчилгээ ашиглагдаж буй жишээ"
+               loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container features" aria-labelledby="features-title">
+      <h2 id="features-title">Яагаад сонгох ёстой вэ?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Хурдан</h3>
+          <p>48 цагийн дотор эхний үр дүнг харах боломж.</p>
+        </div>
+        <div class="card">
+          <h3>Ил тод</h3>
+          <p>Төвөггүй үнэ, нэмэлт төлбөр байхгүй.</p>
+        </div>
+        <div class="card">
+          <h3>Дэмжлэг</h3>
+          <p>24/7 чат болон имэйл дэмжлэг.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="container pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Энгийн үнийн сан</h2>
+      <div class="grid">
+        <div class="price-card">
+          <h3>Анхан шат</h3>
+          <p class="price">₮99,000</p>
+          <ul>
+            <li>Үндсэн үйлчилгээ</li>
+            <li>14 хоногийн буцаалт</li>
+          </ul>
+          <button class="cta primary price-cta">ЗАХИАЛАХ</button>
+        </div>
+        <div class="price-card recommended">
+          <h3>Бизнес</h3>
+          <p class="price">₮199,000</p>
+          <ul>
+            <li>Нэмэлт дэмжлэг</li>
+            <li>Тохирсон шийдэл</li>
+          </ul>
+          <button class="cta primary price-cta">ЗАХИАЛАХ</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Үнийн санал авах</h2>
+      <form id="lead-form" action="https://formspree.io/f/your-id" method="POST" novalidate>
+        <label for="name">Нэр</label>
+        <input id="name" name="name" required>
+        <label for="email">Имэйл</label>
+        <input id="email" name="email" type="email" required>
+        <label for="message">Товч тайлбар (заавал биш)</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <button class="cta primary" type="submit">Илгээх</button>
+        <p class="privacy">Таны мэдээллийг бид бусдад хуваалцахгүй.</p>
+      </form>
+      <div id="form-success" class="hidden" role="status">Баярлалаа! Бид таны захиалгыг хүлээн авлаа — 24 цаг дотор холбогдоно.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer container" role="contentinfo">
+    <div>© Brand • 2025</div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <button id="sticky-cta" class="cta sticky" aria-label="Үнийн санал авах">Үнийн санал авах</button>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
