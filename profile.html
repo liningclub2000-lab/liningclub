@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Миний профиль — Lining Club</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <!-- NAV (matches homepage) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" aria-label="Lining Club Home">
+          <img src="project/assets/Lining-Club-Logo.jpg" alt="Lining Club Logo" class="logo">
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="men.html" class="nav-link">Men</a></li>
+        <li><a href="women.html" class="nav-link">Women</a></li>
+        <li><a href="kids.html" class="nav-link">Kids</a></li>
+        <li><a href="sale.html" class="nav-link">Sale</a></li>
+        <li><a href="snkrs.html" class="nav-link">SNKRS</a></li>
+      </ul>
+
+      <!-- nav-actions injected by script.js -->
+    </div>
+  </nav>
+
+  <main class="container profile-page">
+    <header class="page-header">
+      <h1>Миний профиль</h1>
+      <p>Таны мэдээлэл, захиалга болон хаяг</p>
+    </header>
+
+    <section class="profile-tabs">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="account">Профайл</button>
+        <button class="tab-btn" data-tab="orders">Захиалгууд</button>
+        <button class="tab-btn" data-tab="address">Хаяг</button>
+        <button class="tab-btn" data-tab="security">Аюулгүй байдал</button>
+      </div>
+
+      <div class="tab-content">
+        <!-- Account -->
+        <div id="account" class="tab-panel active">
+          <form id="profileForm" class="profile-form" onsubmit="return false;">
+            <div class="row two-up">
+              <div>
+                <label>Овог</label>
+                <input type="text" id="lastName" placeholder="Овог">
+              </div>
+              <div>
+                <label>Нэр</label>
+                <input type="text" id="firstName" placeholder="Нэр">
+              </div>
+            </div>
+
+            <div class="row two-up">
+              <div>
+                <label>Утас</label>
+                <input type="tel" id="phone" placeholder="+976 99 123456">
+              </div>
+              <div>
+                <label>Gmail / Имэйл</label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+              </div>
+            </div>
+
+            <div class="row dob-row">
+              <label>Төрсөн он/сар/өдөр</label>
+              <div class="dob-selects">
+                <select id="dobYear" aria-label="Төрсөн он"></select>
+                <select id="dobMonth" aria-label="Төрсөн сар"></select>
+                <select id="dobDay" aria-label="Төрсөн өдөр"></select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button id="saveProfileBtn" class="btn-primary">Хадгалах</button>
+              <button id="editProfileBtn" class="btn-secondary" type="button">Засах</button>
+            </div>
+            <div id="profileMsg" class="form-msg" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Orders -->
+        <div id="orders" class="tab-panel">
+          <h3>Миний захиалгууд</h3>
+          <div id="ordersList" class="orders-list"></div>
+        </div>
+
+        <!-- Address -->
+        <div id="address" class="tab-panel">
+          <form id="addressForm" class="profile-form" onsubmit="return false;">
+            <div class="row two-up">
+              <div>
+                <label>Хот / Аймаг</label>
+                <input type="text" id="city" placeholder="Улаанбаатар">
+              </div>
+              <div>
+                <label>Сум / Дүүрэг</label>
+                <input type="text" id="district" placeholder="Сайншанд / Сүхбаатар">
+              </div>
+            </div>
+
+            <div class="row">
+              <label>Гудамж, байр, орц, давхар, тоот</label>
+              <input type="text" id="street" placeholder="Жишээ: Тайжийн гудамж, 12, орц 2, 5 давхар, 501 тоот">
+            </div>
+
+            <div class="form-actions">
+              <button id="saveAddressBtn" class="btn-primary">Хадгалах</button>
+            </div>
+            <div id="addressMsg" class="form-msg" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Security -->
+        <div id="security" class="tab-panel">
+          <h3>Аюулгүй байдал</h3>
+          <p>Хэрэглэгчийн нэвтрэлийг удирдах, нууц үг өөрчлөх, системээс гарах.</p>
+          <div style="display:flex;gap:8px;margin-top:12px;">
+            <button id="changePassBtn" class="btn-secondary">Нууц үг өөрчлөх</button>
+            <button id="logoutBtn" class="btn-primary">Гарах</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>
