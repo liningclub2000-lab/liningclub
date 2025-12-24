@@ -1,0 +1,56 @@
+/* profile.css — small add-on to match homepage theme */
+
+/* Container tweaks */
+.profile-page { padding: 24px 0 80px; }
+.page-header { padding: 18px 0; margin-bottom: 12px; }
+
+/* Tabs */
+.tabs { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+.tab-btn { padding:8px 14px; border-radius:10px; background:transparent; border:1px solid rgba(0,0,0,0.04); cursor:pointer; font-weight:700; }
+.tab-btn.active { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); color:#fff; border:none; }
+
+.tab-content { min-height:220px; background:var(--panel); border-radius:12px; padding:18px; box-shadow: var(--shadow-1); }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* Forms */
+.profile-form .row { display:flex; flex-direction:column; margin-bottom:10px; gap:8px; }
+.two-up { display:flex; gap:12px; }
+.two-up > div { flex:1; }
+.profile-form label { font-weight:700; color:var(--text); }
+.profile-form input, .profile-form select, .profile-form textarea {
+  padding:10px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); background:var(--panel); color:var(--text);
+}
+
+/* DOB selects layout */
+.dob-row .dob-selects { display:flex; gap:8px; }
+.dob-selects select { flex:1; }
+
+/* Actions */
+.form-actions { display:flex; gap:8px; margin-top:8px; }
+.form-msg { margin-top:8px; color:var(--muted); font-size:14px; }
+
+/* Orders list */
+.orders-list { margin-top:12px; }
+.order-card {
+  border:1px solid rgba(0,0,0,0.04);
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.order-meta { color:var(--muted); font-size:14px; }
+.order-items { color:var(--text); font-weight:700; }
+.empty-state { padding:30px; text-align:center; color:var(--muted); }
+
+/* Buttons already defined in styles.css (btn-primary, btn-secondary) */
+
+/* Responsive */
+@media (max-width:768px) {
+  .two-up { flex-direction:column; }
+  .profile-page { padding:12px 0 60px; }
+}
